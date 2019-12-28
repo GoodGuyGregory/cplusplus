@@ -19,6 +19,6 @@ int main()
     cin >> a >> b;
     // store result in c
     c = a + b;
-    cout << "Resulting Total is " << c;
+    cout << "Resulting Total is " << c << endl;
     return 0;
 }
