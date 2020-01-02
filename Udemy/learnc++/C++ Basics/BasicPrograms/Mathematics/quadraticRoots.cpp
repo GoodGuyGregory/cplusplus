@@ -16,7 +16,8 @@ using namespace std;
 int main()
 {
     // declare variables for the user:
-    float a, b, c, root1, root2;
+    int a, b, c;
+    float root1, root2;
 
     cout << "Enter your Quadratic Variables: ";
     cin >> a >> b >> c;
