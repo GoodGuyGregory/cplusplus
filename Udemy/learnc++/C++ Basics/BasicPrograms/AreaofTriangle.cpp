@@ -21,7 +21,7 @@ int main()
     int base, height;
 
     // Prompt User for Data:
-    cout << "Enter Base and Height of Triangle:";
+    cout << "Enter Base and Height of Triangle: ";
 
     // Get the variables of the triangle
     cin >> base >> height;
