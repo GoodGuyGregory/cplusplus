@@ -17,17 +17,6 @@ int main()
 
         // adds the reverse to a new number
         rev = rev * 10 + r;
-    }
-    while (n > 0)
-    {
-        // Removes last digit
-        r = n % 10;
-
-        // moves the digit place with truncated int division
-        n = n / 10;
-
-        // adds the reverse to a new number
-        rev = rev * 10 + r;
 
         switch (r)
         {
@@ -62,5 +51,6 @@ int main()
             cout << "Zero";
         }
     }
+
     return 0;
 }
