@@ -144,3 +144,24 @@ void main()
         delete []q;
     }
 ```
+
+**Pointers to Functions**
+
+Follow these three steps in order to complete a funxtion that will utilize heap values.
+
+```c++
+void display()
+{
+    cout << "Hello" << endl;
+}
+int main() 
+{
+    // pointers to functions
+    // declaration of pointer function
+    void (*fp)();
+    // iniitalization of the pointer
+    fp = display;
+    // function call
+    (*fp)();
+}
+```
