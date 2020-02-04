@@ -14,6 +14,10 @@ int main()
         sum += A[i];
     }
 
+    // This also adds elements with the foreach loop
+    // for (int : A)
+    //     sum += x;
+
     cout << "Sum is: " << sum;
     return 0;
 }
