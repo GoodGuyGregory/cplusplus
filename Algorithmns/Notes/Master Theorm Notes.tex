@@ -8,7 +8,7 @@ Greg Witt
 
 Analysis of Algorithms
 
-\section*{Master Theorem Notes }
+\section*{Master Theorem for Divide and Conquer  }
 
 %Displaying  equations between the $ <math stuff> $
 
@@ -21,5 +21,46 @@ Analysis of Algorithms
 %$\frac{n!}{k!(n-k)!} = \binom{n}{k}$
 
 %$\sqrt{\frac{a}{b}}$
+
+General Form of Recurrence Relation
+
+\vspace{5mm}
+
+$T(n) = \alpha T(\frac{b}{\beta}) + f(n)$
+
+\vspace{5mm}
+$\alpha \geq 1$  
+$\beta > 1$   $f(n) = \theta(n^kLog^pn)$
+
+\vspace{5mm}
+
+The Recurrence Equation provides all of these elements including: 
+
+\begin{itemize}
+
+	\item $log^a_b$
+	\item k
+\end{itemize}
+
+Based on these two values of $log^a_b$ and k there are 3 Cases:
+
+\vspace{5mm}
+Case 1: if $log^a_b > k$ then $\theta(n^{log^a_b})$
+
+\vspace{5mm}
+Case 2:  if $log^a_b = k$ then:
+	\begin{itemize}
+		\item if $p > -1 \cong \theta(n^klog^{p+1}n)$
+		\item if $p =-1 \cong \theta(n^{k}loglogn)$
+		\item if $p < -1 \cong \theta(n^{k})$
+	\end{itemize}
+	
+\vspace{5mm}
+Case 3: if $log^a_b < k$ then:
+	\begin{itemize}
+		\item if $p \geq 0 \cong \theta(n^klog^{p}n)$
+		\item if $p =-1 \cong \theta(n^{k}loglogn)$
+		\item if $p < 0 \cong O(n^{k})$
+	\end{itemize}
 
 \end{document}
