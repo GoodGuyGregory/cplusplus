@@ -1,72 +1,80 @@
 #include <iostream>
+using namespace std;
 
-// insertFunction for Heap
-void Insert(int A[], int n)
+void displayArray(int heap[], int sizeh)
 {
-    int i = n, temp;
-    temp = A[i];
-
-    while (i > 1 && temp > A[i / 2])
-    {
-        A[i] = A[i / 2];
-        i = i / 2;
-    }
-    A[i] = temp;
+    cout << "Array:" << endl;
+    for (int i = 0; i < sizeh; i++)
+        cout << heap[i] << " ";
+    cout << "\n";
 }
 
-int Delete(int A[], int n)
+void heapify(int heap[], int sizeh, int i)
 {
-    int i, j, x, temp, val;
-    val = A[1];
-    x = A[n];
-    A[1] = A[n];
-    A[n] = val;
-    i = 1;
-    // Point J to Left
-    j = i * 2;
+    // Variables for Examining Child Nodes
+    int largestNode = i;
 
-    // Adjustment of the Elements in the Heap
-    while (j < n - 1)
+    int leftChild = 2 * i + 1;
+
+    int rightChild = 2 * i + 2;
+
+    // Check Conditions of the LeftNode
+    if (leftChild < sizeh && heap[leftChild] > heap[largestNode])
     {
-        // Check Greater Parent Nodes:
-        //  If the Right Child is Greater than the Left Child
-        if (A[j + 1] > A[j])
-            j = j + 1;
-        // Check Case to Change Parent
-        if (A[i] < A[j])
-        {
-            temp = A[i];
-            A[i] = A[j];
-            A[j] = temp;
-            i = j;
-            j = 2 * j;
-        }
-        else
-            break;
+        largestNode = leftChild;
     }
-    return val;
+    // Checks Child Condition for the RightNode
+    if (rightChild < sizeh && heap[rightChild] > heap[largestNode])
+    {
+        largestNode = rightChild;
+    }
+
+    if (largestNode != i)
+    {
+        swap(heap[i], heap[largestNode]);
+        heapify(heap, sizeh, largestNode);
+    }
+}
+
+// Builds a Heao with Supporting Algorithm:
+// See notes:
+
+void buildHeap(int heap[], int sizeh)
+{
+    for (int i = int((sizeh / 2) - 1); i >= 0; i--)
+    {
+        heapify(heap, sizeh, i);
+    }
+}
+
+// Sorts With Recursive Heapify call
+void heapSort(int heap[], int sizeh)
+{
+
+    buildHeap(heap, sizeh);
+
+    // Display the Array Prior to Sorting
+    displayArray(heap, sizeh);
+    for (int i = (sizeh - 1); i >= 2; i--)
+    {
+        swap(heap[0], heap[i]);
+
+        heapify(heap, i, 0);
+    }
 }
 
 int main()
 {
-    int H[] = {0, 10, 20, 30, 25, 5, 40, 35};
-    //  After Heap Conversion:
-    // { 40,25,35,10,5,20,30 }
+    // Variables for Heapify
+    int heap[] = {9, 21, 23, 64, 8, 42, 52, 26, 72, 36};
+    int length = sizeof(heap) / sizeof(heap[0]);
 
-    // Creates Heap:
-    for (int i = 2; i <= 7; i++)
-        Insert(H, i);
+    // Display pre-sorted Array:
+    cout << "Array BEFORE sorting" << endl;
+    displayArray(heap, length);
 
-    // Delete Elements from Heap:
-    for (int i = 7; i > 1; i--)
-    {
-        Delete(H, i);
-    }
+    heapSort(heap, length);
 
-    // Display the Heap:
-    for (int i = 1; i <= 7; i++)
-        printf("%d ", H[i]);
-    printf("\n");
-
-    return 0;
+    cout << "Array AFTER heapify" << endl;
+    displayArray(heap, length);
 }
