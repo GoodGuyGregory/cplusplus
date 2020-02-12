@@ -6,6 +6,7 @@ struct Rectangle
     int breadth;
 };
 
+// creates a student struct
 struct student
 {
     int roll;
@@ -13,6 +14,15 @@ struct student
     char dept[10];
     char address[50];
 };
+
+// playing cards:
+struct playingCard
+{
+    int face;
+    int shape;
+    int color;
+};
+
 int main()
 {
     // declaration
@@ -28,5 +38,15 @@ int main()
     r.breadth = 10;
 
     printf("Area of Rectangle is %d", r.length * r.breadth);
+
+    // creates a card object
+    struct playingCard c;
+    c.face = 1;
+    c.shape = 0;
+    c.color = 0;
+
+    // creates a deck
+    struct playingCard deck[52];
+
     return 0;
 }
