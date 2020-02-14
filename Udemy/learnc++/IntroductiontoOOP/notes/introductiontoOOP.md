@@ -48,3 +48,40 @@ There are two main elements of Programming, and are needed to make software
 3. *Inheritance:* from the car example in heritance is the way program's class methods can be passed onto sub classes and child classes
 
 4. *Polymorphism*: Similar to the Car example. when you learn to drive you dont learn a how to drive a specific model vehicle you learn how the drive a car. there are little differences when you make a class it will have different sub classes and adaptations to the main behavior or the root class but still have the same functionality of that class. Just a reuse of a class.
+
+**Class vs Objects**
+
+Classes are defintions and objects are instances of that class
+
+*Classes* are basically blueprints of the *objects* to follow particular formats
+
+Examples:
+
+>
+>Class Human -> You / Me 
+> We are Humans But you and me are objects of the class human
+>
+>Class Car -> Toyota / Honda
+>Cars are classes but there are instances of cars
+>
+
+Creates a basic class
+
+```cpp
+class Rectangle 
+{
+    float length;
+    float breadth;
+
+    // Functions:
+    float Area()
+    float perimeter()
+    float diagonal()
+}
+
+int main() 
+{
+    // Creates Classes
+    Rectangle r1, r2;
+}
+```
