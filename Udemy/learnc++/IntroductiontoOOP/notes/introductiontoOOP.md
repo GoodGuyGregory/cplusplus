@@ -138,3 +138,53 @@ Rectangle (int l = 0, int w = 0) {
     setWidth(w);
 }
 ```
+
+**Functions in Classes**
+
+Functions for Classes are found in the *public* section of the class definition.
+With All of these functions written you have created (wether you need them or not) a PERFECT class in C++.
+
+1. Constructors
+2. Mutators (Setters)
+3. Accessors (Getters)
+4. Facilitator Functions
+5. Inspector Functions
+6. Destructor Functions
+
+Here is an Example of the complete Rectangle Class definition that was used in all of the course's sections:
+
+```c++
+class Rectangle 
+{
+    private: 
+        int length;
+        int width;
+    public:
+        // CONSTRUCTORS:
+        // Default Constructor:
+        Rectangle();
+        Rectangle(int l, int w);
+        // Deep Copy Constructor
+        Rectangle(Rectangle &r);
+
+        // MUTATORS
+        void setLength(int l);
+        void setWidth(int w);
+        
+        // ACCESSORS
+        int getLength();
+        int getWidth();
+
+        // FACILITATOR:
+        int area();
+        int perimeter();
+        
+        // INSPECTORS:
+        int isSquare();
+
+        // DESTRUCTOR:
+        ~Rectangle();
+}
+```
+
+
