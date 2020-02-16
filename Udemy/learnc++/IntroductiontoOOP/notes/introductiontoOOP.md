@@ -85,3 +85,56 @@ int main()
     Rectangle r1, r2;
 }
 ```
+
+**Constructors in C++**
+
+There are four different types of constructors in C++, most of them are just overloaded methods for creating classes
+
+1. Default Constructor (Compiler Provided)
+2. Non-Parameterized (Default Constructor)
+3. Parameterized
+4. Copy Constructors
+
+Constuctors are the same name as the class name.
+
+**Non-Parameterized (Default Constructor)**
+default values are added to the class istantiation of the class.
+
+```c++
+Rectangle () {
+    // Default values for Rectangle
+    length = 0;
+    width = 0;
+}
+```
+
+**Parameterized Constructor**
+
+adds attributes to the class on istantiation or the creation of the object.
+
+```c++
+Rectangle (int l, int w) {
+    // Default values for Rectangle
+    setLength(l);
+    setWidth(b);
+}
+```
+
+**Copy Constructors** 
+
+are classes that are specific to a certain class with its object atttributes combined to replicate a new version of the same class istantation. They are not created from new values theya are passed by reference to another rectangle on heap. The compiler provides all of the attributes of the classes that are being passed.
+
+```c++
+Rectangle (Rectangle( &rect) {
+    // Default values for Rectangle
+    length = rect.length();
+    width = rect.width();
+}
+```
+```c++
+Rectangle (int l = 0, int w = 0) {
+    // Default values for Rectangle
+    setLength(l);
+    setWidth(w);
+}
+```

@@ -22,7 +22,14 @@ public:
 
 int main()
 {
+    // Creates Two Classes in the Main Stack:
     Rectangle r1, r2;
+
+    // creates a pointer variable of class rectangle
+    // Rectangle *ptr;
+
+    //creates a heap reference to the pointer
+    Rectangle *ptr = new Rectangle;
 
     r1.length = 10;
     r1.width = 5;
@@ -34,5 +41,12 @@ int main()
 
     cout << "Area of Rectangle 2 " << r2.area() << endl;
 
+    ptr = &r1;
+    ptr->length = 10;
+    ptr->width = 23;
+    cout << "=============================" << endl;
+    cout << "Area and Paremeter of Pointer Rectangle" << endl;
+    cout << ptr->area() << endl;
+    cout << ptr->perimeter() << endl;
     return 0;
 }
