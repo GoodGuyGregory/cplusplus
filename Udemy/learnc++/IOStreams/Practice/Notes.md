@@ -18,7 +18,7 @@ Classes for accessing input and output of a file system
 
 **Reading Binary in C++**
 
-Binary Reading is Faster in C++ compared to text
+Binary Reading is Faster in C++ compared to text IO
 Mode: ios::binary
     * read()
     * write()
