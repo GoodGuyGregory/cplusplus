@@ -16,4 +16,9 @@ Classes for accessing input and output of a file system
     * ifstream: input file stream
     * ofstream: output file stream
 
+**Reading Binary in C++**
 
+Binary Reading is Faster in C++ compared to text
+Mode: ios::binary
+    * read()
+    * write()
