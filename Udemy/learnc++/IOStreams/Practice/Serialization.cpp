@@ -1,57 +1,75 @@
 #include <iostream>
 #include <fstream>
-
 using namespace std;
 
-class Example
+class Item
 {
+private:
+    string name;
+    float price;
+    int qty;
+
 public:
-    string Name;
-    int Price;
-    int Quanitity;
-
-    // Override Operator methods for the input/output streams
-    friend ofstream &operator<<(ofstream &ofs, Example &e);
-    friend ifstream &operator>>(ifstream &ifs, Example &e);
+    Item() {}
+    Item(string n, float p, int q);
+    friend ifstream &operator>>(ifstream &fis, Item &i);
+    friend ofstream &operator<<(ofstream &fos, Item &i);
+    friend ostream &operator<<(ostream &os, Item &i);
 };
-
-ifstream &operator>>(ifstream &ifs, Example &e)
-{
-    ifs >> e.Name >> e.Price >> e.Quanitity;
-    return ifs;
-}
-
-ofstream &operator<<(ofstream &ofs, Example &e)
-{
-    ofs << e.Name << endl;
-    ofs << e.Price << endl;
-    ofs << e.Quanitity << endl;
-    return ofs;
-}
-
 int main()
 {
-    // Create Classes
-    Example ex1;
-    ex1.Name = "Example";
-    ex1.Price = 000;
-    ex1.Quanitity = 10;
+    int n;
+    string name;
+    float price;
+    int qty;
+    cout << "Enter number of Item:";
+    cin >> n;
+    Item *list[n];
+    cout << "Enter All Item " << endl;
+    for (int i = 0; i < n; i++)
+    {
+        cout << "Enter " << i + 1 << " Item Name , price and quantity";
+        cin >> name;
+        cin >> price;
+        cin >> qty;
+        list[i] = new Item(name, price, qty);
+    }
 
-    // Stores to Output File called Example.txt
-    // ofstream ofs("Example.txt", ios::trunc);
-    // Uses the output file operator for writting
-    // ofs << ex1;
-    // Closes IOstream
-    // ofs.close();
-
-    // Gets over contents from file as a class serialization
-    // and display them from program as input
-    ifstream ifs("Example.txt");
-
-    ifs >> ex1;
-    cout << "Name: " << ex1.Name << endl;
-    cout << "Price: " << ex1.Price << endl;
-    cout << "Quanitity: " << ex1.Quanitity << endl;
-
-    return 0;
+    ofstream fos("Items.txt");
+    for (int i = 0; i < n; i++)
+    {
+        fos << *list[i];
+    }
+    Item item;
+    ifstream fis("Items.txt");
+    for (int i = 0; i < 3; i++)
+    {
+        fis >> item;
+        cout << "Item " << i << item << endl;
+    }
+}
+Item::Item(string n, float p, int q)
+{
+    name = n;
+    price = p;
+    qty = q;
+}
+ofstream &operator<<(ofstream &fos, Item &i)
+{
+    fos << i.name << endl
+        << i.price << endl
+        << i.qty << endl;
+    return fos;
+}
+ifstream &operator>>(ifstream &fis, Item &i)
+{
+    fis >> i.name >> i.price >> i.qty;
+    return fis;
+}
+ostream &operator<<(ostream &os, Item &i)
+{
+    os << i.name << endl
+       << i.price << endl
+       << i.qty << endl;
+    return os;
 }
