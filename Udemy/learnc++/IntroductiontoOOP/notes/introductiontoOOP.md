@@ -188,3 +188,6 @@ class Rectangle
 ```
 
 
+**Structures VS Classes**
+
+the main difference between structures and classes is that the attributes of Structures are default to public while the opposite is true for Classes. Classes have default attributes as Private.

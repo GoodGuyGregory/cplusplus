@@ -13,7 +13,11 @@ public:
     // Default
     Rectangle();
     // Parameterized
-    Rectangle(int l, int width);
+    Rectangle(int length, int width)
+    {
+        this->length = length;
+        this->width = width;
+    }
     // Copy Constructor
     Reactangle(Rectangle &r);
 
