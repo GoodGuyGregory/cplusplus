@@ -11,6 +11,10 @@ void Insert(struct Node *H[], int key)
     SortedInsert(&H[index], key);
 }
 
+// Compiling C Code:
+// =================
+// gcc -o mybinaryfile mysourcefile.c
+
 int main()
 {
     struct Node *HT[10];
