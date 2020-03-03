@@ -31,3 +31,34 @@ Double Rotations
 
 * LR Imbalance Rotation
 * RL Imbalance Rotation
+
+**Formula of Rotation for Insertion**
+
+![Image for LL Rotation]()
+![Image for LR Rotation]()
+
+**Creating an AVL Tree**
+
+![Created AVL Tree](../img/CreateAVLTree.png)
+
+By reordering the tree after each insertion it will reduce the height of the trees and thus reduce the amount of needed comparisons for the search of the tree.
+
+**Rotation for Deletion**
+
+After Deleting a node the inorder predosessor of the tree
+
+The Rotation techniques are the same but named differently due to the nodes which will take the place of the root.
+
+![Deletion Rotation](../img/deletedAVLTree.png)
+
+**Height vs Nodes in AVL Trees**
+
+If Height is given find 
+
+min Nodes `n = N(h-2)+N(h-1)+1 `
+max Nodes `n = 2^(h+1) -1`
+
+If 'N' Nodes are given find
+
+min Height h = `logbase2(n+1)`
+max Height h = ``
