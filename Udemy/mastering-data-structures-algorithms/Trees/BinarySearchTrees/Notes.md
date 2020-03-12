@@ -26,3 +26,116 @@ O(Logn) -> O(n)
 Ranges from
 `h+1 <= n <= 2^h+1-1`
 
+**Comparison for Values in Trees**
+
+Height is determined as Logn <= H <= N O(h) = O(logn). Maximum Comparisons are determined by the height of the tree
+
+**Binary Search Function**
+
+```c++
+// Tail Recursion Case of the function
+Node * Rsearch(Node *t, int key) 
+{
+    // base case
+    if (t == NULL){
+    return NULL;
+    }
+    // if it is found return the value
+    if (key == t->data){
+    return t;
+    }
+    else if (key < t->data) {
+        return Rsearch(t->leftChild, key);
+    }
+    else {
+        // case is greater look to the right
+        return Rsearch(t->rightChild, key);
+    }
+}
+
+// Iterative Function 
+Node * Search(Node * t, int key) {
+    while(t != NULL) {
+    if(key == t->data) {
+        return t;
+    } else if (key < t->data) {
+        t = t-> leftChild;
+
+    } else  {
+        t = t-> rightChild;
+    }
+    }
+    // returns NULL if not in the tree
+    return NULL;
+}
+```
+
+**Insert into a Binary Search Tree**
+
+Algorithmn is to search the tree and if there is a NULL pointer in the Tree return the value for that pointer location and add a new node at that location.
+
+```c++
+void Insert(Node *t, int key) 
+{
+    Node *r = NUll, *p;
+
+    while (t != NULL) 
+    {
+        r = t;
+        if(key == t->data){
+            // stop the function value already exists in the tree 
+            return;
+        } else if (key < t->data) {
+            // move the pointer to the left child of the tree Ndde
+            t = t->leftChild;
+        } else {
+            t = t->rightChild;
+        }
+    }
+    p = makeLocation(...); 
+    p->data.key;
+    p->leftChild = NULL;
+    p->rightChild = NULL;
+    if(p->data < r->data){
+        r->leftChild = p;
+    } else {
+        r->rightChild = p;
+    }
+}
+
+// Recursive BinaryTree Insertion:
+Node * Rinsert(Node *p, int key) {
+    Node *t;
+    // creates a NULL pointer and then checks the location
+    if(p == NULL) 
+    {
+        t=makloc(...);
+        // set the node data with the value from key
+        t->data = key;
+        // set the left and right child as NULL
+        t->leftChild = t ->rightChild = NULL;
+        // returns the root value 
+        return t;
+    } if(key < p->data) {
+        // call external function for insertion into the Tree at the leftside
+        p->leftChild = insert(p->leftChild, key);
+    }
+    else if (key > p->data) {
+        // key is greater than the ROOT node and must be inserted into the rightSubtree
+        p->rightChild = insert(p->rightChild, key);
+        return t;
+    }
+
+}
+
+// Implements the Recursive BinaryTree insertion function:
+int main() {
+    Node *root = NULL;
+    Rinsert(root, 30);
+}
+```
+
+**Create a Binary Search Tree**
+
+Keys: 9,15,5,20,16,8,12,3,6
+
