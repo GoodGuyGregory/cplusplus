@@ -139,3 +139,50 @@ int main() {
 
 Keys: 9,15,5,20,16,8,12,3,6
 
+**Deleting Binary Search Tree**
+
+If Deletion of the Root Occurs you must delete the root and replace the Root Node with the `inorder sucessor/predecessor` the in-order sucessor is the Left most node in the `Right` subtree the in order predecessor is the right most node on the `left subtree`. When choosing which node to use to replace the overall height of the tree it is advised to use the inorder node that corresponds to a tree with the higher subtree height. If the Inorder successor or predecessor is not a leaf node there will need to be a case which will handle this and modify leaves accordingly.
+
+Deletion's Time Complexity is once again dependent on the Height of the tree. so O(logn) is the common complexity and the additional modifications that might be required are factored in to that height complexity. the number of modifications is based also on the tree height and thus the complexity is also O(Logn)
+
+**Inorder and Preorder of BST**
+
+Generating a Preorder traversal Function in C++
+
+```c++
+void createPre(int pre[], int n) 
+{
+    stack stk;
+    Node *t;
+    int i = 0;
+
+    root = new Node;
+    root -> data = pre[i++];
+    root -> lchild = root ->rchild = NULL;
+    p=root;
+
+    while(i < n) 
+    {
+        if (pre[i] < p->data) 
+        {
+            t= newNode;
+            t -> data = pre[i++];
+            t -> lchild = t ->rchild = NULL;
+            p = lchild = t;
+            push(&stk, p);
+            p=t;
+        } else {
+            if(pre[i] > p->data && pre[i] < stack) 
+            {
+                 t= newNode;
+            t -> data = pre[i++];
+            t -> lchild = t ->rchild = NULL;
+            p = lchild = t;
+            push(&stk, p);
+            p=t;
+            }
+        }
+    }
+
+}
+```
