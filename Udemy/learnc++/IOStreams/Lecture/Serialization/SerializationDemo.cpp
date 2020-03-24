@@ -11,7 +11,9 @@ public:
     string year;
 
     // Friend Functions for overriding the IOstream for file
+    // Overrides the insertion operator for the object
     friend ofstream &operator<<(ofstream &ofs, Student &s);
+    // overrides the read function of a file for the student object
     friend ifstream &operator>>(ifstream &ifs, Student &s);
 };
 
@@ -45,6 +47,7 @@ int main()
     //  This would be easier if I can simply store the whole class?
     // this allows for the operator to be overloaded and from the friend function above
 
+    // Uses the output file stream operator with the overriden function call
     ofs << s1;
 
     // ifs >> s1;

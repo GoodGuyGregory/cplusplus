@@ -5,7 +5,7 @@ int main()
     // output filestream with file name inside outfile.
     // if the file doesnt exist it will create it.
     // if the file is there the contents will be removed from the file
-    std::ofstream outfile("My.txt", ios::trunc);
+    std::ofstream outfile("My.txt", std::ios::trunc);
 
     // if you want to read in the contents and append new contents
     // ios::app - appending to the file
