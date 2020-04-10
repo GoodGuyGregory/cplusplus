@@ -4,6 +4,8 @@ Graphs are defined as a length of connected verticies and edges. often writen as
 
 `G = (V, E)` : Where V is a set of verticies and E is a set of edges.
 
+Graphs are very useful breaking down complex programing problems and assist in forming solutions to these proble,s. a solid undertstanding in conceptual design and implimentation can make you a better programmer/problem solver.
+
 Below are examples of graphs
 
 ![Graph Images]()
