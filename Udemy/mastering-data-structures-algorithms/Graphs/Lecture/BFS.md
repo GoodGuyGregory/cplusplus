@@ -17,3 +17,8 @@ Queue Structures are the technical language way of doing this exploration proces
 Time Complexity: Work to be done depends on the number of Verticies that need to be visited on the graph. N verticies are being visited and the time for this operation is Order of N. 
 
 Analytically you MUST ignore insertions and deletions from the queue process as part of the complexity.
+
+Below is an example implementation of the Queue Structure method for BFS implementation.
+The Resulting Tree is known as a BFS-spanning Tree. The edges are called *Cross Edges*
+
+![Exploring with Queue Structures](../img/ExploringQueue.png)
