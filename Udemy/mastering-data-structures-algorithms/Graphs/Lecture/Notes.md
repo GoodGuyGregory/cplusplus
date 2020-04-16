@@ -8,7 +8,7 @@ Graphs are very useful breaking down complex programing problems and assist in f
 
 Below are examples of graphs
 
-![Graph Images]()
+![Graph Images](../img/GraphImages.png)
 
 **Components for Graphs**
 
