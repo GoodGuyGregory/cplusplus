@@ -18,6 +18,7 @@ int main()
 {
     int tableSize = 11;
     int hashlocation;
+
     cout << "Division Method:" << endl;
     cout << "============================" << endl;
 
@@ -47,4 +48,25 @@ int main()
 
     cout << "Multiplication Method:" << endl;
     cout << "============================" << endl;
+
+    hashlocation = multiplication(173, tableSize);
+    cout << "Number 173: " << hashlocation << endl;
+
+    hashlocation = multiplication(18, tableSize);
+    cout << "Number 18: " << hashlocation << endl;
+
+    hashlocation = multiplication(49, tableSize);
+    cout << "Number 49: " << hashlocation << endl;
+
+    hashlocation = multiplication(91, tableSize);
+    cout << "Number 91: " << hashlocation << endl;
+
+    hashlocation = multiplication(110, tableSize);
+    cout << "Number 110: " << hashlocation << endl;
+
+    hashlocation = multiplication(156, tableSize);
+    cout << "Number 156: " << hashlocation << endl;
+
+    hashlocation = multiplication(47, tableSize);
+    cout << "Number 47: " << hashlocation << endl;
 }
