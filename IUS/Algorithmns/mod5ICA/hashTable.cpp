@@ -14,10 +14,18 @@ int division(int key, int tableSize)
 {
     return (key % tableSize);
 }
+
+int hashFunctionB(int key)
+{
+    return ((key + 31) % 10);
+}
+
 int main()
 {
     int tableSize = 11;
     int hashlocation;
+
+    cout << "Part A Implementation:" << endl;
 
     cout << "Division Method:" << endl;
     cout << "============================" << endl;
@@ -69,4 +77,28 @@ int main()
 
     hashlocation = multiplication(47, tableSize);
     cout << "Number 47: " << hashlocation << endl;
+    cout << "============================" << endl;
+    cout << " " << endl;
+
+    cout << "Part B Implementation:" << endl;
+    cout << "============================" << endl;
+    cout << "Number 19: " << hashFunctionB(19) << endl;
+
+    cout << "Number 26: " << hashFunctionB(26) << endl;
+
+    cout << "Number 13: " << hashFunctionB(13) << endl;
+
+    cout << "Number 48: " << hashFunctionB(48) << endl;
+
+    cout << "Number 17: " << hashFunctionB(17) << endl;
+
+    cout << "Number 23: " << hashFunctionB(23) << endl;
+
+    cout << "Number 79: " << hashFunctionB(79) << endl;
+
+    cout << "Number 38: " << hashFunctionB(38) << endl;
+
+    cout << "Number 58: " << hashFunctionB(58) << endl;
+
+    cout << "Number 55: " << hashFunctionB(55) << endl;
 }
