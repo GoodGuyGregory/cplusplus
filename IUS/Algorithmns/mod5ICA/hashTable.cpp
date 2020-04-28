@@ -1,34 +1,50 @@
 #include <iostream>
 #include <cmath>
 
+#define A 0.6180339887
+
 using namespace std;
 
-void multiplication(int A[], int n)
+int multiplication(int key, int tableSize)
 {
-    const double a = .6180339887;
-    for (int i = 0; i < n; i++)
-    {
-        cout << (11 * ((A[i] * (a * 1))));
-        cout << " ";
-    }
+    return floor(tableSize * fmod(key * A, 1));
 }
-void division(int A[], int n)
+
+int division(int key, int tableSize)
 {
-    for (int i = 0; i < n; i++)
-    {
-        cout << A[i] % 11;
-        cout << " ";
-    }
+    return (key % tableSize);
 }
 int main()
 {
+    int tableSize = 11;
+    int hashlocation;
+    cout << "Division Method:" << endl;
+    cout << "============================" << endl;
 
-    int A[7] = {173, 18, 49, 91, 110, 156, 47};
+    hashlocation = division(173, tableSize);
+    cout << "Number 173: " << hashlocation << endl;
 
-    cout << "Division Method" << endl;
-    division(A, 7);
-    cout << endl;
+    hashlocation = division(18, tableSize);
+    cout << "Number 18 " << hashlocation << endl;
+
+    hashlocation = division(49, tableSize);
+    cout << "Number 49: " << hashlocation << endl;
+
+    hashlocation = division(91, tableSize);
+    cout << "Number 91: " << hashlocation << endl;
+
+    hashlocation = division(110, tableSize);
+    cout << "Number 110: " << hashlocation << endl;
+
+    hashlocation = division(156, tableSize);
+    cout << "Number 156: " << hashlocation << endl;
+
+    hashlocation = division(47, tableSize);
+    cout << "Number 47: " << hashlocation << endl;
+
+    cout << "============================" << endl;
+    cout << " " << endl;
 
     cout << "Multiplication Method:" << endl;
-    multiplication(A, 7);
+    cout << "============================" << endl;
 }
