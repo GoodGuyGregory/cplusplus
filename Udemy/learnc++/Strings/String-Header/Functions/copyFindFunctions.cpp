@@ -17,9 +17,13 @@ int main() {
   string str2 = "How are you?";
 
   cout << "Find the value '?' in " << str2 << endl;
-  cout << "Found at: " << str2.find("?");
+  cout << "Found at: " << str2.find("?") << endl;
+
+  cout << "Find the value 'g' in " << str2 << endl;
+  cout << "Found at: " << str2.find("g");
 
   //  This can also be used with s.find_first_of(), and s.find_last_of()
 
-  // Substrings
+  // Substrings:
+
 }
